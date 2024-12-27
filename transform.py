@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 def transform(raw_data):
     raw_data.fillna(
@@ -17,7 +16,7 @@ def transform(raw_data):
                               "MarkDown2", "MarkDown3", "MarkDown4", "MarkDown5", "Type", 
                               "Size", "Date"], axis = 1)
     
-    clean_data = transform(merged_df)
+
     
 
 def avg_weekly_sales_per_month(clean_data):
@@ -33,5 +32,3 @@ def avg_weekly_sales_per_month(clean_data):
     .reset_index().round(2))
     return holidays_sales
 
-# Call the avg_weekly_sales_per_month() function and pass the cleaned DataFrame
-agg_data = avg_weekly_sales_per_month(clean_data)
